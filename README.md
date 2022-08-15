@@ -53,3 +53,86 @@ if(a%b==0) return a/b;
 else return a/b +1;
 }
 ```                       
+# Binary Search
+```c++
+int binarySearch(ll arr[], int l, int r, int x) 
+{ 
+while (l <= r) { 
+int m = l + (r - l) / 2; 
+if (arr[m] == x&&m!=0) 
+return m; 
+if (arr[m] < x) 
+l = m + 1; 
+else
+r = m - 1; 
+} 
+return 0; 
+} 
+``` 
+# Gcd and Lcm 
+```c++
+ll gcd(long long int a, long long int b)
+{
+if (b == 0)
+return a;
+return gcd(b, a % b);
+}
+ll lcm(ll a, ll b)
+{
+return (a / gcd(a, b)) * b;
+}
+```
+# Smallest Divisor
+```c++
+ll smallestDivisor(ll n)
+{
+    // if divisible by 2
+    if (n % 2 == 0)
+        return 2;
+ 
+    // iterate from 3 to sqrt(n)
+    for (ll i = 3; i * i <= n; i += 2) {
+        if (n % i == 0)
+            return i;
+    }
+ 
+    return n;
+}
+```  
+# Square root
+```c++
+  ld squareRoot(ld n)
+    {
+        /*We are using n itself as initial approximation
+        This can definitely be improved */
+        ld x = n;
+        ld y = 1;
+        ld e = 0.00000000001; /* e decides the accuracy level*/
+        while (x - y > e) {
+            x = (x + y) / 2;
+            y = n / x;
+        }
+        return x;
+    }
+  ```
+  # Power of Number
+  ```c++
+  ll power(ll a, ll b) 
+  { 
+ll pow = 1; 
+while ( b )  
+{ 
+        if ( b & 1 )  
+        { 
+        pow = pow * a;
+        // pow%=mod1;
+        --b; 
+        } 
+        a = a*a;
+        // a%=mod1; 
+        b = b/2; 
+} 
+return pow; 
+} 
+```  
+  
