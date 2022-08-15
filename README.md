@@ -23,7 +23,7 @@
 - const ll mod1 = 998244353;
 - const long double Pi = acos(-1);
 - const long double euler= 2.7182818284590452353602;
-  ---
+  
   # To check Prime or NOT
   ```c++
    bool isPrime(ll n)
